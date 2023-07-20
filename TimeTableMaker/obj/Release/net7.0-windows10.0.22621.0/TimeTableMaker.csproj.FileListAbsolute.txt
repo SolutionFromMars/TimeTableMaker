@@ -1,0 +1,14 @@
+D:\Mark\Old Desctop\TimeTableMaker\TimeTableMaker\bin\Release\net7.0-windows10.0.22621.0\TimeTableMaker.exe
+D:\Mark\Old Desctop\TimeTableMaker\TimeTableMaker\bin\Release\net7.0-windows10.0.22621.0\TimeTableMaker.deps.json
+D:\Mark\Old Desctop\TimeTableMaker\TimeTableMaker\bin\Release\net7.0-windows10.0.22621.0\TimeTableMaker.runtimeconfig.json
+D:\Mark\Old Desctop\TimeTableMaker\TimeTableMaker\bin\Release\net7.0-windows10.0.22621.0\TimeTableMaker.dll
+D:\Mark\Old Desctop\TimeTableMaker\TimeTableMaker\bin\Release\net7.0-windows10.0.22621.0\Microsoft.Windows.SDK.NET.dll
+D:\Mark\Old Desctop\TimeTableMaker\TimeTableMaker\bin\Release\net7.0-windows10.0.22621.0\WinRT.Runtime.dll
+D:\Mark\Old Desctop\TimeTableMaker\TimeTableMaker\obj\Release\net7.0-windows10.0.22621.0\TimeTableMaker.csproj.AssemblyReference.cache
+D:\Mark\Old Desctop\TimeTableMaker\TimeTableMaker\obj\Release\net7.0-windows10.0.22621.0\TimeTableMaker.Place.resources
+D:\Mark\Old Desctop\TimeTableMaker\TimeTableMaker\obj\Release\net7.0-windows10.0.22621.0\TimeTableMaker.csproj.GenerateResource.cache
+D:\Mark\Old Desctop\TimeTableMaker\TimeTableMaker\obj\Release\net7.0-windows10.0.22621.0\TimeTableMaker.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mark\Old Desctop\TimeTableMaker\TimeTableMaker\obj\Release\net7.0-windows10.0.22621.0\TimeTableMaker.csproj.CoreCompileInputs.cache
+D:\Mark\Old Desctop\TimeTableMaker\TimeTableMaker\obj\Release\net7.0-windows10.0.22621.0\TimeTableMaker.csproj.CopyComplete
+D:\Mark\Old Desctop\TimeTableMaker\TimeTableMaker\obj\Release\net7.0-windows10.0.22621.0\TimeTableMaker.dll
+D:\Mark\Old Desctop\TimeTableMaker\TimeTableMaker\obj\Release\net7.0-windows10.0.22621.0\TimeTableMaker.genruntimeconfig.cache
