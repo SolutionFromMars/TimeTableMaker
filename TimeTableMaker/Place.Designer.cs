@@ -32,8 +32,8 @@
             selectSize = new ComboBox();
             editData = new Button();
             saveImage = new Button();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            representsImage = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)representsImage).BeginInit();
             SuspendLayout();
             // 
             // selectTheme
@@ -46,6 +46,7 @@
             selectTheme.Name = "selectTheme";
             selectTheme.Size = new Size(200, 25);
             selectTheme.TabIndex = 0;
+            selectTheme.SelectedIndex = 0;
             // 
             // selectSize
             // 
@@ -56,6 +57,7 @@
             selectSize.Name = "selectSize";
             selectSize.Size = new Size(200, 25);
             selectSize.TabIndex = 1;
+            selectSize.SelectedIndex = 0;
             // 
             // editData
             // 
@@ -77,28 +79,27 @@
             saveImage.Text = "Сохранить";
             saveImage.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // representsImage
             // 
-            pictureBox1.Location = new Point(225, 10);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(165, 165);
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
+            representsImage.Location = new Point(225, 10);
+            representsImage.Name = "representsImage";
+            representsImage.Size = new Size(160, 160);
+            representsImage.TabIndex = 4;
+            representsImage.TabStop = false;
             // 
             // Place
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(400, 180);
+            Controls.Add(representsImage);
             Controls.Add(saveImage);
             Controls.Add(editData);
             Controls.Add(selectSize);
             Controls.Add(selectTheme);
             Name = "Place";
             Text = "Создатель расписаний";
-            Load += Place_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)representsImage).EndInit();
             ResumeLayout(false);
         }
 
@@ -108,6 +109,6 @@
         private ComboBox selectSize;
         private Button editData;
         private Button saveImage;
-        private PictureBox pictureBox1;
+        private PictureBox representsImage;
     }
 }

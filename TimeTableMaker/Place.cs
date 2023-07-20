@@ -6,10 +6,5 @@ namespace TimeTableMaker
         {
             InitializeComponent();
         }
-
-        private void Place_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
