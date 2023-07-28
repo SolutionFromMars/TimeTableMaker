@@ -1,10 +1,9 @@
-namespace TimeTableMaker
+namespace TimeTableMaker;
+
+public partial class Place : Form
 {
-    public partial class Place : Form
+    public Place()
     {
-        public Place()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

@@ -57,7 +57,7 @@
             selectSize.Name = "selectSize";
             selectSize.Size = new Size(200, 25);
             selectSize.TabIndex = 1;
-            selectSize.SelectedIndex = 0;
+            //selectSize.SelectedIndex = 0;
             // 
             // editData
             // 
