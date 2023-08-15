@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TimeTableMaker
-{
-    /// <summary>
+namespace TimeTableMaker;
+
+/// <summary>
     /// Класс отвечает за создание тем
     /// </summary>
-    internal class GenerationThemes {
-        /// <summary>
+internal class GenerationThemes {
+    /// <summary>
         ///Постоянный список длительности уроков
         /// </summary>
-        readonly List<string> timeLessons = new() { 
+    internal readonly List<string> timeLessons = new() { 
             "09:00 - 09:40", 
             "10:00 - 10:40", 
             "10:55 - 11:35", 
@@ -22,10 +22,10 @@ namespace TimeTableMaker
             "13:45 - 14:25", 
             "14:35 - 15:15" };
 
-        /// <summary>
+    /// <summary>
         /// Основа для текстового представления расписания
         /// </summary>
-        Dictionary<string, List<string>?> TimeTable = new() {
+    internal Dictionary<string, List<string>> TimeTable = new() {
             { "Понедельник", null },
             { "Вторник"    , null },
             { "Среда"      , null },
@@ -33,34 +33,70 @@ namespace TimeTableMaker
             { "Пятница"    , null },
             { "Время"      , null }};
 
-        ImageSizes standard = new();
+    internal static readonly List<ImageSizes> SizesList = new()
+    {
+        new("4:3 480x360", 480, 360),
+        new("9:16 720x1280", 720, 1280),
+        new("9:21 720x1680", 720, 1680),
+    };
+    internal static readonly List<GenerationThemes> ThemesList = new()
+    {
+        new("Нормальная тема", (imageSizes) =>
+        {
+            switch (imageSizes)
+            {
+                case ImageSizes S480x360:
+                    break;
+            }
+        }),
+    };
+    internal Bitmap TableImage { get; private set; }
+    internal Graphics TableGraphics { get; private set; }
+    internal string themeName { get; private set; }
+    internal delegate void DrawerImage(ImageSizes imageSizes);
+    DrawerImage drawer;
 
-        /// <summary>
-        /// Подставляет циферки перед каждым элементом
-        /// </summary>
-        /// <param name="lessons"></param>
-        /// <returns>Тот же список с уже подставленными циферками</returns>
-        static List<string> AddNumbers(List<string> lessons) {
-            var newList = new List<string>(); //создание нового списка
-            for (int i = 0; i < lessons.Count; i++) //перебирает каждый элемент
-                newList.Add($"{i + 1}. {lessons[i]}"); //для добавления новых в новом списке
-            return newList; //возвращение нового списка
-        }
+    /// <summary>
+    /// Подставляет циферки перед каждым элементом
+    /// </summary>
+    /// <param name="lessons"></param>
+    /// <returns>Тот же список с уже подставленными циферками</returns>
+    static protected List<string> AddNumbers(List<string> lessons) {
+        var newList = new List<string>(); //создание нового списка
+        for (int i = 0; i < lessons.Count; i++) //перебирает каждый элемент
+            newList.Add($"{i + 1}. {lessons[i]}"); //для добавления новых в новом списке
+        return newList; //возвращение нового списка
+    }
 
-        /// <summary>
-        /// Определяет формат и размер для тем
-        /// </summary>
-        internal class ImageSizes {
-            internal string name { get; private set; }
-            internal int width, height;
-            /// <param name="name">Название формата, показываемое пользователю</param>
+    /// <summary>
+    /// Меняет картинку экземпляра класса
+    /// </summary>
+    /// <param name="theme">Инструкция для рисования</param>
+    /// <param name="size">Выбранный размер для инструкции</param>
+    internal void MakeImage(GenerationThemes theme, ImageSizes size) {
+        TableImage = new(size.width, size.height);
+        theme.drawer(size); //обращение к отрисовщику
+    }
+
+    internal GenerationThemes(string themeName, DrawerImage drawer) {
+        this.themeName = themeName;
+        this.drawer = drawer;
+    }
+
+    /// <summary>
+    /// Определяет формат и размер для тем
+    /// </summary>
+    internal sealed class ImageSizes {
+        internal string name { get; private set; }
+        internal int width { get; private set; }
+        internal int height{ get; private set; }
+        /// <param name="name">Название формата, показываемое пользователю</param>
             /// <param name="width">Ширина формата</param>
             /// <param name="height">Высота формата</param>
-            ImageSizes(string name, int width, int height) {
-                this.name = name;
-                this.width = width;
-                this.height = height;
-            }
+        internal ImageSizes(string name, int width, int height) {
+            this.name = name;
+            this.width = width;
+            this.height = height;
         }
     }
 }

@@ -41,12 +41,10 @@
             selectTheme.DropDownStyle = ComboBoxStyle.DropDownList;
             selectTheme.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             selectTheme.FormattingEnabled = true;
-            selectTheme.Items.AddRange(new object[] { "аты", "баты", "шли", "солдаты" });
             selectTheme.Location = new Point(10, 10);
             selectTheme.Name = "selectTheme";
             selectTheme.Size = new Size(200, 25);
             selectTheme.TabIndex = 0;
-            selectTheme.SelectedIndex = 0;
             // 
             // selectSize
             // 
@@ -57,7 +55,6 @@
             selectSize.Name = "selectSize";
             selectSize.Size = new Size(200, 25);
             selectSize.TabIndex = 1;
-            //selectSize.SelectedIndex = 0;
             // 
             // editData
             // 
@@ -81,6 +78,7 @@
             // 
             // representsImage
             // 
+            representsImage.BackColor = Color.White;
             representsImage.Location = new Point(225, 10);
             representsImage.Name = "representsImage";
             representsImage.Size = new Size(160, 160);
@@ -97,8 +95,11 @@
             Controls.Add(editData);
             Controls.Add(selectSize);
             Controls.Add(selectTheme);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Place";
             Text = "Создатель расписаний";
+            Load += Place_Load;
             ((System.ComponentModel.ISupportInitialize)representsImage).EndInit();
             ResumeLayout(false);
         }
