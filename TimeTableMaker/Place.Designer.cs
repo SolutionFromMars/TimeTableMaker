@@ -45,6 +45,7 @@
             selectTheme.Name = "selectTheme";
             selectTheme.Size = new Size(200, 25);
             selectTheme.TabIndex = 0;
+            selectTheme.SelectedIndexChanged += selectTheme_SelectedIndexChanged;
             // 
             // selectSize
             // 
@@ -55,6 +56,7 @@
             selectSize.Name = "selectSize";
             selectSize.Size = new Size(200, 25);
             selectSize.TabIndex = 1;
+            selectSize.SelectedIndexChanged += selectSize_SelectedIndexChanged;
             // 
             // editData
             // 

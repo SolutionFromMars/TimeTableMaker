@@ -50,11 +50,27 @@ internal class GenerationThemes {
             }
         }),
     };
-    internal Bitmap TableImage { get; private set; }
-    internal Graphics TableGraphics { get; private set; }
+    /// <summary>
+    /// Итоговое изображение расписания
+    /// </summary>
+    internal static Bitmap TableImage { get; private set; }
+    /// <summary>
+    /// 
+    /// </summary>
+    private Graphics TableGraphics;
+    /// <summary>
+    /// Название темы
+    /// </summary>
     internal string themeName { get; private set; }
+    /// <summary>
+    /// Делегат для создания прорисовщиков
+    /// </summary>
+    /// <param name="imageSizes">Параметр для определения размера</param>
     internal delegate void DrawerImage(ImageSizes imageSizes);
-    DrawerImage drawer;
+    /// <summary>
+    /// Инструкция для прорисовки темы конкретного экземпляра
+    /// </summary>
+    private DrawerImage drawer;
 
     /// <summary>
     /// Подставляет циферки перед каждым элементом
@@ -73,11 +89,16 @@ internal class GenerationThemes {
     /// </summary>
     /// <param name="theme">Инструкция для рисования</param>
     /// <param name="size">Выбранный размер для инструкции</param>
-    internal void MakeImage(GenerationThemes theme, ImageSizes size) {
+    internal static void MakeImage(GenerationThemes theme, ImageSizes size) {
         TableImage = new(size.width, size.height);
         theme.drawer(size); //обращение к отрисовщику
     }
 
+    /// <summary>
+    /// Создание новой темы
+    /// </summary>
+    /// <param name="themeName">Название этой темы</param>
+    /// <param name="drawer">Инструкция для прорисовки</param>
     internal GenerationThemes(string themeName, DrawerImage drawer) {
         this.themeName = themeName;
         this.drawer = drawer;
