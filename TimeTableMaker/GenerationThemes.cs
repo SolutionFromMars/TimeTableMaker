@@ -57,7 +57,7 @@ internal class GenerationThemes {
     /// <summary>
     /// Локальное обеспечение графики
     /// </summary>
-    private Graphics TableGraphics;
+    private static Graphics TableGraphics;
     /// <summary>
     /// Название темы
     /// </summary>
@@ -91,6 +91,7 @@ internal class GenerationThemes {
     /// <param name="size">Выбранный размер для инструкции</param>
     internal static void MakeImage(GenerationThemes theme, ImageSizes size) {
         TableImage = new(size.width, size.height);
+        TableGraphics = Graphics.FromImage(TableImage);
         theme.drawer(size); //обращение к отрисовщику
     }
 

@@ -45,7 +45,7 @@
             selectTheme.Name = "selectTheme";
             selectTheme.Size = new Size(200, 25);
             selectTheme.TabIndex = 0;
-            selectTheme.SelectedIndexChanged += selectTheme_SelectedIndexChanged;
+            selectTheme.SelectionChangeCommitted += SelectedChanged;
             // 
             // selectSize
             // 
@@ -56,7 +56,7 @@
             selectSize.Name = "selectSize";
             selectSize.Size = new Size(200, 25);
             selectSize.TabIndex = 1;
-            selectSize.SelectedIndexChanged += selectSize_SelectedIndexChanged;
+            selectSize.SelectionChangeCommitted += SelectedChanged;
             // 
             // editData
             // 
@@ -80,7 +80,7 @@
             // 
             // representsImage
             // 
-            representsImage.BackColor = Color.Black;
+            representsImage.BackColor = Color.White;
             representsImage.Location = new Point(225, 10);
             representsImage.Name = "representsImage";
             representsImage.Size = new Size(160, 160);
