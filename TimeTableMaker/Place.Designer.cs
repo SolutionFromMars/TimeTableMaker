@@ -80,7 +80,7 @@
             // 
             // representsImage
             // 
-            representsImage.BackColor = Color.White;
+            representsImage.BackColor = Color.Black;
             representsImage.Location = new Point(225, 10);
             representsImage.Name = "representsImage";
             representsImage.Size = new Size(160, 160);

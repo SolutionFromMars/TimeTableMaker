@@ -55,7 +55,7 @@ internal class GenerationThemes {
     /// </summary>
     internal static Bitmap TableImage { get; private set; }
     /// <summary>
-    /// 
+    /// Локальное обеспечение графики
     /// </summary>
     private Graphics TableGraphics;
     /// <summary>

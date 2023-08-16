@@ -14,7 +14,7 @@ public partial class Place : Form
         selectTheme.SelectedIndex = 0;
         selectSize.SelectedIndex = 0;
         GenerationThemes.MakeImage(GenerationThemes.ThemesList[0], GenerationThemes.SizesList[0]);
-        representsImage.Image = GenerationThemes.
+        representsImage.Image = GenerationThemes.TableImage;
     }
 
     private void selectTheme_SelectedIndexChanged(object sender, EventArgs e)
