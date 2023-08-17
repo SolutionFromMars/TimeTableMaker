@@ -77,6 +77,7 @@
             saveImage.TabIndex = 3;
             saveImage.Text = "Сохранить";
             saveImage.UseVisualStyleBackColor = true;
+            saveImage.Click += saveImage_Click;
             // 
             // representsImage
             // 

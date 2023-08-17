@@ -1,3 +1,6 @@
+using System.Drawing.Imaging;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+
 namespace TimeTableMaker;
 
 public partial class Place : Form
@@ -24,5 +27,15 @@ public partial class Place : Form
     {
         GenerationThemes.MakeImage(GenerationThemes.ThemesList[selectTheme.SelectedIndex], GenerationThemes.SizesList[selectSize.SelectedIndex]);
         representsImage.Image = GenerationThemes.TableImage;
+    }
+
+    private void saveImage_Click(object sender, EventArgs e)
+    {
+        SaveFileDialog saveFileDialog = new();
+        saveFileDialog.DefaultExt = ".png";
+        saveFileDialog.Filter = "“олько PNG и ничего кроме PNG|.png";
+        saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            GenerationThemes.TableImage.Save(saveFileDialog.FileName, ImageFormat.Png); //сохранение TableImage как PNG
     }
 }

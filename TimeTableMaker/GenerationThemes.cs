@@ -43,11 +43,8 @@ internal class GenerationThemes {
     {
         new("Нормальная тема", (imageSizes) =>
         {
-            switch (imageSizes)
-            {
-                case ImageSizes S480x360:
-                    break;
-            }
+            if (imageSizes == SizesList[0])TableGraphics.Clear(Color.Aqua);
+            if (imageSizes == SizesList[1])TableGraphics.Clear(Color.Red);
         }),
     };
     /// <summary>
