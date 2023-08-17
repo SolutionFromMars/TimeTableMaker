@@ -4,5 +4,8 @@
     <Compile Update="Place.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Redactor.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

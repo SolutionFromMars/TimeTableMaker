@@ -33,6 +33,7 @@ public partial class Place : Form
     {
         SaveFileDialog saveFileDialog = new();
         saveFileDialog.DefaultExt = ".png";
+        saveFileDialog.FileName = "Марк, ты красавчик спасибо большое, вовек буду благодарен";
         saveFileDialog.Filter = "Только PNG и ничего кроме PNG|.png";
         saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
         if (saveFileDialog.ShowDialog() == DialogResult.OK)
