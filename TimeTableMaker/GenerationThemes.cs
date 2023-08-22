@@ -9,11 +9,11 @@ namespace TimeTableMaker;
 /// <summary>
     /// Класс отвечает за создание тем
     /// </summary>
-internal class GenerationThemes {
+internal sealed class GenerationThemes {
     /// <summary>
         ///Постоянный список длительности уроков
         /// </summary>
-    internal readonly List<string> timeLessons = new() { 
+    internal static readonly List<string> timeLessons = new() { 
             "09:00 - 09:40", 
             "10:00 - 10:40", 
             "10:55 - 11:35", 
@@ -25,7 +25,7 @@ internal class GenerationThemes {
     /// <summary>
         /// Основа для текстового представления расписания
         /// </summary>
-    internal Dictionary<string, List<string>> TimeTable = new() {
+    internal static Dictionary<string, List<string>> TimeTable = new() {
             { "Понедельник", null },
             { "Вторник"    , null },
             { "Среда"      , null },
@@ -41,8 +41,7 @@ internal class GenerationThemes {
     };
     internal static readonly List<GenerationThemes> ThemesList = new()
     {
-        new("Нормальная тема", (imageSizes) =>
-        {
+        new("Нормальная тема", (imageSizes) =>{
             if (imageSizes == SizesList[0])TableGraphics.Clear(Color.Aqua);
             if (imageSizes == SizesList[1])TableGraphics.Clear(Color.Red);
         }),

@@ -67,6 +67,7 @@
             editData.TabIndex = 2;
             editData.Text = "Редактировать";
             editData.UseVisualStyleBackColor = true;
+            editData.Click += editData_Click;
             // 
             // saveImage
             // 

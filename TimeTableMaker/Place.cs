@@ -31,12 +31,20 @@ public partial class Place : Form
 
     private void saveImage_Click(object sender, EventArgs e)
     {
-        SaveFileDialog saveFileDialog = new();
-        saveFileDialog.DefaultExt = ".png";
-        saveFileDialog.FileName = "Марк, ты красавчик спасибо большое, вовек буду благодарен";
-        saveFileDialog.Filter = "Только PNG и ничего кроме PNG|.png";
-        saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+        SaveFileDialog saveFileDialog = new()
+        {
+            DefaultExt = ".png",
+            FileName = "Расписание",
+            Filter = "Только PNG и ничего кроме PNG|.png",
+            InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
+        };
         if (saveFileDialog.ShowDialog() == DialogResult.OK)
             GenerationThemes.TableImage.Save(saveFileDialog.FileName, ImageFormat.Png); //сохранение TableImage как PNG
+    }
+
+    private void editData_Click(object sender, EventArgs e)
+    {
+        Redactor redactor = new();
+        redactor.Show();
     }
 }
