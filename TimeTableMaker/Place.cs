@@ -42,9 +42,9 @@ public partial class Place : Form
             GenerationThemes.TableImage.Save(saveFileDialog.FileName, ImageFormat.Png); //сохранение TableImage как PNG
     }
 
-    private void editData_Click(object sender, EventArgs e)
+    private void OpenRedactor(object sender, EventArgs e)
     {
-        Redactor redactor = new();
-        redactor.Show();
+        Opacity = .75; //установка прозрачности
+        new Redactor(this).ShowDialog(); //Show() просто открывает форму, но ShowDialog() блокирует текущую форму, пока не закроется форма Redactor
     }
 }

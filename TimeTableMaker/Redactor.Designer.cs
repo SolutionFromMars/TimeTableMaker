@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             saveTable = new Button();
-            noSaveTable = new Button();
             groupBox1 = new GroupBox();
             textMonday = new TextBox();
             groupBox2 = new GroupBox();
@@ -49,23 +48,13 @@
             // 
             // saveTable
             // 
-            saveTable.Location = new Point(145, 417);
+            saveTable.Location = new Point(315, 224);
             saveTable.Name = "saveTable";
             saveTable.Size = new Size(75, 23);
             saveTable.TabIndex = 0;
             saveTable.Text = "Сохранить";
             saveTable.UseVisualStyleBackColor = true;
             saveTable.Click += saveTable_Click;
-            // 
-            // noSaveTable
-            // 
-            noSaveTable.Location = new Point(478, 432);
-            noSaveTable.Name = "noSaveTable";
-            noSaveTable.Size = new Size(131, 23);
-            noSaveTable.TabIndex = 1;
-            noSaveTable.Text = "Не сохранить";
-            noSaveTable.UseVisualStyleBackColor = true;
-            noSaveTable.Click += noSaveTable_Click;
             // 
             // groupBox1
             // 
@@ -174,20 +163,23 @@
             // 
             // Redactor
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(739, 478);
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(739, 413);
             Controls.Add(groupBox2);
             Controls.Add(groupBox3);
             Controls.Add(groupBox4);
             Controls.Add(groupBox5);
             Controls.Add(groupBox1);
-            Controls.Add(noSaveTable);
             Controls.Add(saveTable);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Redactor";
-            Text = "Redactor";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Изменение расписания";
+            FormClosing += Redactor_FormClosing;
             Load += Redactor_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -205,7 +197,6 @@
         #endregion
 
         private Button saveTable;
-        private Button noSaveTable;
         private GroupBox groupBox1;
         private TextBox textMonday;
         private GroupBox groupBox2;
