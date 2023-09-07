@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using WinRT;
-
-namespace TimeTableMaker
+﻿namespace TimeTableMaker
 {
     public partial class Redactor : Form
     {
@@ -24,8 +13,8 @@ namespace TimeTableMaker
         private void Redactor_Load(object sender, EventArgs e)
         {
             GenerationThemes.SetLessonsList();
-            var keys = GenerationThemes.TimeTable.Keys.ToArray();
-            var values = GenerationThemes.TimeTable.Values.ToArray();
+            var keys = GenerationThemes.NameDays;
+            var values = GenerationThemes.Lessons;
             groupBox1.Text = keys[0]; //присвоение заголовкам GroupBox имена
             groupBox2.Text = keys[1]; //ключей из словаря Generationthemes.TimeTable
             groupBox3.Text = keys[2];
@@ -53,7 +42,7 @@ namespace TimeTableMaker
 
         private void textChanged(object sender, EventArgs e)
         {
-            var tb = sender.As<TextBox>();
+            var tb = (TextBox)sender;
             var sels = tb.SelectionStart;
             var lessons = tb.Text.Split(Environment.NewLine).ToList(); //получение текста и преобразование его в список
             if (lessons.Count > 8) lessons.RemoveRange(8, lessons.Count - 8); //должно быть максимум 8 строк

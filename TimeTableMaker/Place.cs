@@ -1,5 +1,4 @@
 using System.Drawing.Imaging;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace TimeTableMaker;
 
