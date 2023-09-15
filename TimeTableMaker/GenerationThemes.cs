@@ -51,9 +51,12 @@ internal sealed class GenerationThemes {
             TableGraphics.Clear(Color.White);
             var presentValues = new List<string>();
             foreach (var i in Lessons) presentValues.Add(String.Join(Environment.NewLine, AddNumbers(i)));
+            var majorFF = FontFamily.GenericSerif;
+            var minorFF = FontFamily.GenericSansSerif;
+            var fs = FontStyle.Italic;
             if (imageSizes == SizesList[0]){
-               var MajorFont = new Font(FontFamily.GenericSerif, 16, FontStyle.Italic);
-               var MinorFont = new Font(FontFamily.GenericSansSerif, 9);
+               var MajorFont = new Font(majorFF, 16, fs);
+               var MinorFont = new Font(minorFF, 9);
                for (int i = 0; i < NameDays.Count; i++){
                     TableGraphics.DrawString(NameDays[i], MajorFont, Brushes.Black, new PointF(imageSizes.width/3*(i%3)+15, imageSizes.height/2*(i/3)+5));
                     TableGraphics.DrawString(presentValues[i], MinorFont, Brushes.Black,
@@ -61,8 +64,8 @@ internal sealed class GenerationThemes {
                }
             }
             if (imageSizes == SizesList[1]){
-               var MajorFont = new Font(FontFamily.GenericSerif, 27, FontStyle.Italic);
-               var MinorFont = new Font(FontFamily.GenericSansSerif, 20);
+               var MajorFont = new Font(majorFF, 27, fs);
+               var MinorFont = new Font(minorFF, 20);
                for (int i = 0; i < NameDays.Count; i++){
                     TableGraphics.DrawString(NameDays[i], MajorFont, Brushes.Black, new PointF(imageSizes.width/2*(i%2)+50, imageSizes.height/3*(i/2)+130 +(2-i/2)*100));
                     TableGraphics.DrawString(presentValues[i], MinorFont, Brushes.Black,
@@ -70,17 +73,26 @@ internal sealed class GenerationThemes {
                }
             }
             if (imageSizes == SizesList[2]){
-               var MajorFont = new Font(FontFamily.GenericSerif, 28, FontStyle.Italic);
-               var MinorFont = new Font(FontFamily.GenericSansSerif, 21);
+               var MajorFont = new Font(majorFF, 28, fs);
+               var MinorFont = new Font(minorFF, 21);
                for (int i = 0; i < NameDays.Count; i++){
                     TableGraphics.DrawString(NameDays[i], MajorFont, Brushes.Black, new PointF(imageSizes.width/2*(i%2)+45, imageSizes.height/3*(i/2)+230 +(2-i/2)*230));
                     TableGraphics.DrawString(presentValues[i], MinorFont, Brushes.Black,
                         new PointF(imageSizes.width/2*(i%2)+15, imageSizes.height/3*(i/2)+270 +(2-i/2)*230));
                }
             }
+            if (imageSizes == SizesList[3]){
+               var MajorFont = new Font(majorFF, 42, fs);
+               var MinorFont = new Font(minorFF, 30);
+               for (int i = 0; i < NameDays.Count; i++){
+                    TableGraphics.DrawString(NameDays[i], MajorFont, Brushes.Black, new PointF(imageSizes.width/2*(i%2)+70, imageSizes.height/3*(i/2)+190 +(2-i/2)*100));
+                    TableGraphics.DrawString(presentValues[i], MinorFont, Brushes.Black,
+                        new PointF(imageSizes.width/2*(i%2)+40, imageSizes.height/3*(i/2)+250 +(2-i/2)*100));
+               }
+            }
             if (imageSizes == SizesList[4]){
-               var MajorFont = new Font(FontFamily.GenericSerif, 44, FontStyle.Italic);
-               var MinorFont = new Font(FontFamily.GenericSansSerif, 32);
+               var MajorFont = new Font(majorFF, 44, fs);
+               var MinorFont = new Font(minorFF, 32);
                for (int i = 0; i < NameDays.Count; i++){
                     TableGraphics.DrawString(NameDays[i], MajorFont, Brushes.Black, new PointF(imageSizes.width/2*(i%2)+55, imageSizes.height/3*(i/2)+310 +(2-i/2)*320));
                     TableGraphics.DrawString(presentValues[i], MinorFont, Brushes.Black,
