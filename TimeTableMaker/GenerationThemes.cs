@@ -99,6 +99,15 @@ internal sealed class GenerationThemes {
                         new PointF(imageSizes.width/2*(i%2)+20, imageSizes.height/3*(i/2)+380 +(2-i/2)*320));
                }
             }
+            if (imageSizes == SizesList[5]){
+               var MajorFont = new Font(majorFF, 45, fs);
+               var MinorFont = new Font(minorFF, 36);
+               for (int i = 0; i < NameDays.Count; i++){
+                    TableGraphics.DrawString(NameDays[i], MajorFont, Brushes.Black, new PointF(imageSizes.width/3*(i%3)+80, imageSizes.height/2*(i/3)+5));
+                    TableGraphics.DrawString(presentValues[i], MinorFont, Brushes.Black,
+                        new PointF(imageSizes.width/3*(i%3)+40, imageSizes.height/2*(i/3)+70));
+               }
+            }
         }),
     };
     /// <summary>
