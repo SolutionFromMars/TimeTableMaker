@@ -109,6 +109,10 @@ internal sealed class GenerationThemes {
                }
             }
         }),
+
+        new("Темная", imageSizes =>{
+            TableGraphics.Clear(Color.Black);
+        }),
     };
     /// <summary>
     /// 
