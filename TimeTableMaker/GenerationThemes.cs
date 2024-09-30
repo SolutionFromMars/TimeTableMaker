@@ -39,6 +39,7 @@ internal sealed class GenerationThemes {
     internal static readonly List<ImageSizes> SizesList = new()
     {
         new("4:3 480x360", 480, 360),
+        new("1:1 720x720", 720, 720),
         new("9:16 720x1280", 720, 1280),
         new("9:21 720x1680", 720, 1680),
         new("9:16 1080x1920", 1080, 1920),
@@ -64,6 +65,15 @@ internal sealed class GenerationThemes {
                }
             }
             if (imageSizes == SizesList[1]){
+               var MajorFont = new Font(majorFF, 31, fs);
+               var MinorFont = new Font(minorFF, 22);
+               for (int i = 0; i < NameDays.Count; i++){
+                    TableGraphics.DrawString(NameDays[i], MajorFont, Brushes.Black, new PointF(imageSizes.width/3*(i%3+.1875f)-30, imageSizes.height/2*(i/3)+30));
+                    TableGraphics.DrawString(presentValues[i], MinorFont, Brushes.Black,
+                        new PointF(imageSizes.width/3*(i%3+.0009765625f)+10, imageSizes.height/2*(i/3)+90));
+               }
+            }
+            if (imageSizes == SizesList[2]){
                var MajorFont = new Font(majorFF, 27, fs);
                var MinorFont = new Font(minorFF, 20);
                for (int i = 0; i < NameDays.Count; i++){
@@ -72,7 +82,7 @@ internal sealed class GenerationThemes {
                         new PointF(imageSizes.width/2*(i%2)+30, imageSizes.height/3*(i/2)+170 +(2-i/2)*100));
                }
             }
-            if (imageSizes == SizesList[2]){
+            if (imageSizes == SizesList[3]){
                var MajorFont = new Font(majorFF, 28, fs);
                var MinorFont = new Font(minorFF, 21);
                for (int i = 0; i < NameDays.Count; i++){
@@ -81,7 +91,7 @@ internal sealed class GenerationThemes {
                         new PointF(imageSizes.width/2*(i%2)+15, imageSizes.height/3*(i/2)+270 +(2-i/2)*230));
                }
             }
-            if (imageSizes == SizesList[3]){
+            if (imageSizes == SizesList[4]){
                var MajorFont = new Font(majorFF, 42, fs);
                var MinorFont = new Font(minorFF, 30);
                for (int i = 0; i < NameDays.Count; i++){
@@ -90,7 +100,7 @@ internal sealed class GenerationThemes {
                         new PointF(imageSizes.width/2*(i%2)+40, imageSizes.height/3*(i/2)+250 +(2-i/2)*100));
                }
             }
-            if (imageSizes == SizesList[4]){
+            if (imageSizes == SizesList[5]){
                var MajorFont = new Font(majorFF, 44, fs);
                var MinorFont = new Font(minorFF, 32);
                for (int i = 0; i < NameDays.Count; i++){
@@ -99,7 +109,7 @@ internal sealed class GenerationThemes {
                         new PointF(imageSizes.width/2*(i%2)+20, imageSizes.height/3*(i/2)+380 +(2-i/2)*320));
                }
             }
-            if (imageSizes == SizesList[5]){
+            if (imageSizes == SizesList[6]){
                var MajorFont = new Font(majorFF, 45, fs);
                var MinorFont = new Font(minorFF, 36);
                for (int i = 0; i < NameDays.Count; i++){

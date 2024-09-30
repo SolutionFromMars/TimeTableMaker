@@ -14,7 +14,7 @@ public partial class Place : Form
         foreach (var elem in GenerationThemes.ThemesList) selectTheme.Items.Add(elem.themeName);
         foreach (var elem in GenerationThemes.SizesList) selectSize.Items.Add(elem.name);
         selectTheme.SelectedIndex = 0; //изменяется значение SelectedIndex и вызывается событие SelectedIndexChanged, но не вызывается событие SelectionChangeCommitted
-        selectSize.SelectedIndex = 0; //по умолчагнию значение -1, что не подходит для списка
+        selectSize.SelectedIndex = 0; //по умолчанию значение -1, что не подходит для списка
         GenerationThemes.MakeImage(GenerationThemes.ThemesList[0], GenerationThemes.SizesList[0]);
         representsImage.Image = GenerationThemes.TableImage;
     }

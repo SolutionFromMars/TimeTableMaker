@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1tMBNCRoZDWsoBuadTQknZ30Jg4RP9//+A9e02vdegh07lyCVtCMFvg0DrxMa9Oa/aCLF8vFIYD9YMwoXUFTyg==",
+  "dgSpecHash": "zWxTE0G9cwE=",
   "success": true,
   "projectFilePath": "D:\\Mark\\Old Desctop\\TimeTableMaker\\TimeTableMaker\\TimeTableMaker.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\1\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.29\\microsoft.windows.sdk.net.ref.10.0.22621.29.nupkg.sha512"
+    "C:\\Users\\1\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.31\\microsoft.windows.sdk.net.ref.10.0.22621.31.nupkg.sha512"
   ],
   "logs": []
 }
